@@ -27,7 +27,7 @@ export default function Main() {
         <img 
           src="/images/profile.png" 
           alt="Profile" 
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[95%] object-contain object-bottom drop-shadow-[0_10px_30px_rgba(0,0,0,0.5)]"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[90%] h-[95%] object-contain object-bottom"
           onError={(e) => {
             // Fallback for preview before user uploads their own image
             const target = e.target as HTMLImageElement;
