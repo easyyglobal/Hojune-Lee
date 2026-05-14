@@ -101,7 +101,7 @@ export default function Booking() {
             <strong className="text-white">{selectedDate && format(selectedDate, "M월 d일 (E)", { locale: ko })} {selectedTime}</strong><br/>
             요청하신 연락처로 확정 안내를 드리겠습니다.
           </p>
-          <a href="/" className="w-full p-[18px] bg-gradient-to-r from-primary to-secondary text-black font-extrabold rounded-[18px] block hover:brightness-110 transition-all shadow-[0_10px_25px_rgba(197,160,89,0.2)]">
+          <a href="/" className="w-full p-[18px] bg-gradient-to-r from-primary to-secondary text-white font-extrabold rounded-[18px] block hover:brightness-110 transition-all shadow-[0_10px_25px_rgba(0,102,255,0.2)]">
             홈으로 돌아가기
           </a>
         </div>
@@ -124,7 +124,7 @@ export default function Booking() {
             key={s} 
             className={cn(
               "w-8 h-8 rounded-full flex items-center justify-center font-bold text-sm relative z-10 transition-colors duration-300 shadow-sm",
-              step > s ? "bg-primary text-black" : step === s ? "bg-primary text-black ring-4 ring-primary/20" : "bg-[#1A1A1E] text-gray-500 border-2 border-[#2A2A2A]"
+              step > s ? "bg-primary text-white" : step === s ? "bg-primary text-white ring-4 ring-primary/20" : "bg-[#1A1A1E] text-gray-500 border-2 border-[#2A2A2A]"
             )}
           >
             {step > s ? <Check size={16} /> : s}
@@ -179,7 +179,7 @@ export default function Booking() {
                       className={cn(
                         "h-10 w-full flex items-center justify-center rounded-full text-[15px] transition-all duration-200 font-medium",
                         isDisabled ? "text-gray-700 opacity-30 cursor-not-allowed" : "cursor-pointer hover:bg-white/10",
-                        isSelected ? "bg-primary text-black font-bold shadow-[0_4px_12px_rgba(212,175,55,0.3)] hover:bg-primary" : "",
+                        isSelected ? "bg-primary text-white font-bold shadow-[0_4px_12px_rgba(0,102,255,0.3)] hover:bg-primary" : "",
                         !isSelected && !isDisabled && isWeekend ? "text-red-400" : (!isDisabled && !isSelected ? "text-gray-200" : "")
                       )}
                     >
@@ -208,7 +208,7 @@ export default function Booking() {
                     className={cn(
                       "py-4 px-2 rounded-[16px] border text-sm font-semibold transition-all duration-200 focus:outline-none",
                       isSelected
-                        ? "bg-primary border-primary text-black shadow-[0_4px_15px_rgba(212,175,55,0.2)]" 
+                        ? "bg-primary border-primary text-white shadow-[0_4px_15px_rgba(0,102,255,0.2)]" 
                         : "bg-[#1A1A1E] border-white/5 hover:border-primary/50 text-gray-300"
                     )}
                   >
@@ -274,7 +274,7 @@ export default function Booking() {
           <button 
             disabled={!selectedDate}
             onClick={handleNext}
-            className="w-full bg-gradient-to-r from-primary to-secondary text-black p-[18px] rounded-[18px] font-extrabold filter disabled:opacity-50 disabled:grayscale disabled:cursor-not-allowed transition-all active:scale-95 shadow-[0_10px_25px_rgba(197,160,89,0.2)]"
+            className="w-full bg-gradient-to-r from-primary to-secondary text-white p-[18px] rounded-[18px] font-extrabold filter disabled:opacity-50 disabled:grayscale disabled:cursor-not-allowed transition-all active:scale-95 shadow-[0_10px_25px_rgba(0,102,255,0.2)]"
           >
             다음 단계
           </button>
@@ -286,7 +286,7 @@ export default function Booking() {
              <button 
               disabled={!selectedTime}
               onClick={handleNext}
-              className="flex-1 bg-gradient-to-r from-primary to-secondary text-black p-[18px] rounded-[18px] font-extrabold filter disabled:opacity-50 disabled:cursor-not-allowed transition-all active:scale-95 shadow-[0_10px_25px_rgba(197,160,89,0.2)] disabled:grayscale"
+              className="flex-1 bg-gradient-to-r from-primary to-secondary text-white p-[18px] rounded-[18px] font-extrabold filter disabled:opacity-50 disabled:cursor-not-allowed transition-all active:scale-95 shadow-[0_10px_25px_rgba(0,102,255,0.2)] disabled:grayscale"
             >
               다음 단계
             </button>
@@ -300,7 +300,7 @@ export default function Booking() {
               type="submit"
               form="bookingForm"
               disabled={!isFormValid || isSubmitting}
-              className="flex-1 bg-gradient-to-r from-primary to-secondary text-black p-[18px] rounded-[18px] font-extrabold filter disabled:opacity-50 disabled:cursor-not-allowed transition-all active:scale-95 shadow-[0_10px_25px_rgba(197,160,89,0.2)] disabled:grayscale"
+              className="flex-1 bg-gradient-to-r from-primary to-secondary text-white p-[18px] rounded-[18px] font-extrabold filter disabled:opacity-50 disabled:cursor-not-allowed transition-all active:scale-95 shadow-[0_10px_25px_rgba(0,102,255,0.2)] disabled:grayscale"
             >
               {isSubmitting ? "예약 진행 중..." : "예약 완료하기"}
             </button>
