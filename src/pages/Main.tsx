@@ -1,0 +1,68 @@
+import { Link } from "react-router-dom";
+import { Phone, CalendarCheck } from "lucide-react";
+import MobileLayout from "../components/layout/MobileLayout";
+
+export default function Main() {
+  return (
+    <MobileLayout>
+      {/* Top Image Fixed Positioned */}
+      <div className="absolute top-0 left-0 w-full h-[60%] z-0 pointer-events-none">
+        <img 
+          src="https://loremflickr.com/800/1000/portrait,professional" 
+          alt="Profile" 
+          className="w-full h-full object-cover object-top"
+        />
+        <div className="absolute bottom-0 left-0 w-full h-[60%] bg-gradient-to-t from-[#111111] via-[#111111]/50 to-transparent"></div>
+      </div>
+
+      {/* 
+        This absolute container forces NO SCROLL. 
+        It sits precisely at bottom 0 and allows flex-col placement without expanding past viewport height.
+      */}
+      <div className="absolute bottom-0 left-0 right-0 w-full z-10 flex flex-col justify-end px-5 pb-6 overflow-hidden pointer-events-none">
+        
+        <div className="flex flex-col w-full pointer-events-auto">
+          {/* Profile Title & Sub */}
+          <div className="mb-6">
+            <h2 className="text-[28px] font-extrabold text-white tracking-tight mb-2 drop-shadow-md">
+              김도윤 <span className="text-secondary font-medium text-[16px] ml-0.5">수석컨설턴트</span>
+            </h2>
+            <p className="text-[14px] text-gray-300 font-medium leading-[1.5] drop-shadow-md">
+              복잡한 보험, 명쾌하게 풀어드립니다.<br/>당신의 삶을 위한 가장 안전한 마스터 플랜.
+            </p>
+          </div>
+          
+          {/* Trust Indicators */}
+          <div className="grid grid-cols-2 gap-3 w-full mb-6">
+            <div className="bg-black/40 backdrop-blur-md border border-white/10 py-5 px-3 rounded-[20px] text-center shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+              <span className="text-[26px] font-bold text-secondary block mb-1 leading-none tracking-tight">99.8%</span>
+              <span className="text-[12px] text-gray-400 font-medium tracking-wide">누적 상담 만족도</span>
+            </div>
+            <div className="bg-black/40 backdrop-blur-md border border-white/10 py-5 px-3 rounded-[20px] text-center shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
+              <span className="text-[26px] font-bold text-secondary block mb-1 leading-none tracking-tight">1,500+</span>
+              <span className="text-[12px] text-gray-400 font-medium tracking-wide">누적 컨설팅 건수</span>
+            </div>
+          </div>
+          
+          {/* Action Buttons inside the same non-scroll flow */}
+          <div className="flex gap-2.5 w-full">
+            <a 
+              href="tel:010-1234-5678"
+              className="w-[110px] shrink-0 flex items-center justify-center gap-1.5 bg-[#2A2A2A] border border-white/5 text-white py-[18px] rounded-[18px] font-bold text-[14px] hover:bg-[#333] transition-colors whitespace-nowrap shadow-lg"
+            >
+              <Phone size={18} className="text-gray-400 shrink-0" />
+              <span className="shrink-0">전화상담</span>
+            </a>
+            <Link 
+              to="/booking" 
+              className="flex-1 shrink-0 flex items-center justify-center gap-1.5 bg-gradient-to-r from-primary to-secondary text-black py-[18px] rounded-[18px] font-extrabold text-[15px] shadow-[0_6px_24px_rgba(197,160,89,0.25)] hover:brightness-110 transition-all whitespace-nowrap"
+            >
+              <span className="shrink-0">상담 예약하기</span>
+              <CalendarCheck size={18} className="shrink-0" />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </MobileLayout>
+  );
+}
