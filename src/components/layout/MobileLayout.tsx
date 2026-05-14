@@ -46,7 +46,7 @@ export default function MobileLayout({ children }: MobileLayoutProps) {
         </div>
 
         {/* Mobile Container */}
-        <div className="w-full max-w-[360px] bg-[#111111] min-h-[100dvh] md:min-h-[680px] md:h-[680px] md:rounded-[48px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)] relative z-10 overflow-hidden flex flex-col mx-auto md:border-[8px] md:border-[#1F1F1F]">
+        <div className="w-full sm:max-w-[400px] md:max-w-[360px] bg-[#111111] min-h-[100dvh] md:min-h-[680px] md:h-[680px] md:rounded-[48px] shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)] relative z-10 overflow-hidden flex flex-col mx-auto md:border-[8px] md:border-[#1F1F1F]">
           {children}
         </div>
       </div>

@@ -49,10 +49,9 @@ export default function Booking() {
         await fetch(webhookUrl, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'text/plain;charset=utf-8',
           },
           body: JSON.stringify(payload),
-          mode: 'no-cors' // Google Apps Script 웹훅 호출 시 CORS 오류 방지
         });
       } else {
         // Webhook URL이 설정되지 않은 경우 시뮬레이션 (1초 대기)

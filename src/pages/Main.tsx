@@ -8,9 +8,13 @@ export default function Main() {
       {/* Top Image Fixed Positioned */}
       <div className="absolute top-0 left-0 w-full h-[60%] z-0 pointer-events-none">
         <img 
-          src="https://loremflickr.com/800/1000/portrait,professional" 
+          src="/images/profile.jpg" 
           alt="Profile" 
           className="w-full h-full object-cover object-top"
+          onError={(e) => {
+            // Fallback for preview before user uploads their own image
+            (e.target as HTMLImageElement).src = "https://loremflickr.com/800/1000/portrait,professional";
+          }}
         />
         <div className="absolute bottom-0 left-0 w-full h-[60%] bg-gradient-to-t from-[#111111] via-[#111111]/50 to-transparent"></div>
       </div>
