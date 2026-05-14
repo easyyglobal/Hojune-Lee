@@ -22,7 +22,7 @@ export default function MobileLayout({ children }: MobileLayoutProps) {
           <div className="inline-flex items-center px-4 py-2 bg-[#1A1A1A] rounded-[30px] border border-primary/20 mb-3 text-[14px] font-semibold text-primary">
             Premium Consulting
           </div>
-          <h1 className="text-[56px] font-extrabold leading-[1.1] tracking-[-2px] text-white mb-6">
+          <h1 className="text-[40px] lg:text-[46px] font-extrabold leading-[1.2] tracking-tight text-white mb-6">
             당신의 삶을 지키는<br/>가장 <span className="text-primary">합리적인</span> 선택
           </h1>
           <p className="text-[18px] leading-[1.6] text-gray-400 mb-8">
