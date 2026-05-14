@@ -52,7 +52,7 @@ export default function Main() {
           {/* Profile Title & Sub */}
           <div className="mb-6">
             <h2 className="text-[28px] font-extrabold text-white tracking-tight mb-2 drop-shadow-md">
-              김도윤 <span className="text-secondary font-medium text-[16px] ml-0.5">수석컨설턴트</span>
+              이호준 <span className="text-secondary font-medium text-[16px] ml-0.5">지점장</span>
             </h2>
             <p className="text-[14px] text-gray-300 font-medium leading-[1.5] drop-shadow-md">
               복잡한 보험, 명쾌하게 풀어드립니다.<br/>당신의 삶을 위한 가장 안전한 마스터 플랜.
@@ -66,7 +66,7 @@ export default function Main() {
               <span className="text-[12px] text-gray-400 font-medium tracking-wide">누적 상담 만족도</span>
             </div>
             <div className="bg-black/40 backdrop-blur-md border border-white/10 py-5 px-3 rounded-[20px] text-center shadow-[0_8px_32px_rgba(0,0,0,0.4)]">
-              <span className="text-[26px] font-bold text-secondary block mb-1 leading-none tracking-tight">1,500+</span>
+              <span className="text-[26px] font-bold text-secondary block mb-1 leading-none tracking-tight">800+</span>
               <span className="text-[12px] text-gray-400 font-medium tracking-wide">누적 컨설팅 건수</span>
             </div>
           </div>
