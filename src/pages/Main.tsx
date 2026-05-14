@@ -6,7 +6,7 @@ export default function Main() {
   return (
     <MobileLayout>
       {/* Top Image Fixed Positioned */}
-      <div className="absolute top-0 left-0 w-full h-[60%] z-0 pointer-events-none">
+      <div className="absolute top-0 left-0 right-0 w-full h-[65%] z-0 pointer-events-none">
         <img 
           src="/images/profile.jpg" 
           alt="Profile" 
@@ -16,7 +16,8 @@ export default function Main() {
             (e.target as HTMLImageElement).src = "https://loremflickr.com/800/1000/portrait,professional";
           }}
         />
-        <div className="absolute bottom-0 left-0 w-full h-[60%] bg-gradient-to-t from-[#111111] via-[#111111]/50 to-transparent"></div>
+        {/* Gradient that fades smoothly into the black background */}
+        <div className="absolute bottom-0 left-0 right-0 w-full h-[50%] bg-gradient-to-t from-[#111111] via-[#111111]/70 to-transparent"></div>
       </div>
 
       {/* 

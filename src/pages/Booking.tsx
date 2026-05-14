@@ -33,7 +33,8 @@ export default function Booking() {
     setIsSubmitting(true);
     
     try {
-      const webhookUrl = import.meta.env.VITE_GOOGLE_SHEETS_WEBHOOK_URL;
+      // 환경변수 관련 문제 방지를 위해 앱스스크립트 URL을 명시적으로 고정합니다.
+      const webhookUrl = "https://script.google.com/macros/s/AKfycbytyN_IrJqK2bI6LDRTDMLpSxWUcWzqCgNzWBovHCuEL7OZHc228JcZ9Or5RaeTzxOa/exec";
       
       const payload = {
         manager: "김도윤", // 담당자 구분 (다른 사람 앱으로 만들 때 이 이름을 변경하세요)
@@ -45,19 +46,14 @@ export default function Booking() {
         timestamp: new Date().toISOString()
       };
 
-      if (webhookUrl) {
-        await fetch(webhookUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'text/plain;charset=utf-8',
-          },
-          body: JSON.stringify(payload),
-        });
-      } else {
-        // Webhook URL이 설정되지 않은 경우 시뮬레이션 (1초 대기)
-        await new Promise(resolve => setTimeout(resolve, 1000));
-        console.log("구글 시트 웹훅 URL이 없습니다. 전송될 데이터:", payload);
-      }
+      await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8',
+        },
+        body: JSON.stringify(payload),
+        mode: 'no-cors'
+      });
       
       setStep(4);
     } catch (error) {
