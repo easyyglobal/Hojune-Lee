@@ -37,7 +37,7 @@ export default function Booking() {
       const webhookUrl = "https://script.google.com/macros/s/AKfycbytyN_IrJqK2bI6LDRTDMLpSxWUcWzqCgNzWBovHCuEL7OZHc228JcZ9Or5RaeTzxOa/exec";
       
       const payload = {
-        manager: "김별이", // 담당자 구분 (다른 사람 앱으로 만들 때 이 이름을 변경하세요)
+        manager: "이호준", // 담당자 구분 (다른 사람 앱으로 만들 때 이 이름을 변경하세요)
         date: selectedDate ? format(selectedDate, "yyyy-MM-dd") : "",
         time: selectedTime,
         name: formData.name,
