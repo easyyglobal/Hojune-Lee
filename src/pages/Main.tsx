@@ -74,7 +74,7 @@ export default function Main() {
           {/* Action Buttons inside the same non-scroll flow */}
           <div className="flex gap-2.5 w-full">
             <a 
-              href="tel:010-9905-8064"
+              href="tel:010-1234-5678"
               className="w-[110px] shrink-0 flex items-center justify-center gap-1.5 bg-[#2A2A2A] border border-white/5 text-white py-[18px] rounded-[18px] font-bold text-[14px] hover:bg-[#333] transition-colors whitespace-nowrap shadow-lg"
             >
               <Phone size={18} className="text-gray-400 shrink-0" />

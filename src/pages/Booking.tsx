@@ -37,7 +37,7 @@ export default function Booking() {
       const webhookUrl = "https://script.google.com/macros/s/AKfycbytyN_IrJqK2bI6LDRTDMLpSxWUcWzqCgNzWBovHCuEL7OZHc228JcZ9Or5RaeTzxOa/exec";
       
       const payload = {
-        manager: "이호준", // 담당자 구분 (다른 사람 앱으로 만들 때 이 이름을 변경하세요)
+        manager: "김별이", // 담당자 구분 (다른 사람 앱으로 만들 때 이 이름을 변경하세요)
         date: selectedDate ? format(selectedDate, "yyyy-MM-dd") : "",
         time: selectedTime,
         name: formData.name,
@@ -246,10 +246,19 @@ export default function Booking() {
                 <input 
                   type="tel" 
                   required
-                  placeholder="숫자만 입력해주세요 (- 제외)"
+                  maxLength={13}
+                  placeholder="예: 010-0000-0000"
                   className="w-full bg-[#1A1A1E] border border-white/10 rounded-[16px] px-5 py-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-medium text-white placeholder-gray-600"
                   value={formData.phone}
-                  onChange={(e) => setFormData(p => ({ ...p, phone: e.target.value }))}
+                  onChange={(e) => {
+                    let value = e.target.value.replace(/[^0-9]/g, "");
+                    if (value.length > 3 && value.length <= 7) {
+                      value = `${value.slice(0, 3)}-${value.slice(3)}`;
+                    } else if (value.length > 7) {
+                      value = `${value.slice(0, 3)}-${value.slice(3, 7)}-${value.slice(7, 11)}`;
+                    }
+                    setFormData(p => ({ ...p, phone: value }));
+                  }}
                 />
               </div>
               <div>
@@ -257,7 +266,7 @@ export default function Booking() {
                 <input 
                   type="text" 
                   required
-                  placeholder="예: 서울시 강남구, 비대면(전화) 등"
+                  placeholder="예: 제주시 노형동, 서귀포시 등"
                   className="w-full bg-[#1A1A1E] border border-white/10 rounded-[16px] px-5 py-4 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all font-medium text-white placeholder-gray-600"
                   value={formData.location}
                   onChange={(e) => setFormData(p => ({ ...p, location: e.target.value }))}
